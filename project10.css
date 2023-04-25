@@ -1,0 +1,635 @@
+* {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+    font-family: 'Lexend', Times, serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.form-section {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-section-2
+{
+    display: none;
+}
+
+.form {
+    background-color: white;
+    width: 35rem;
+    padding: 5rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem 0rem;
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+}
+
+.form .title {
+    font-size: 1.5rem;
+    /* font-weight: lighter; */
+}
+.title h1
+{
+    font-weight: 500;
+}
+
+.content-1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 0rem 0.5rem;
+    height: 3.5rem;
+
+}
+.form2-content-1
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 0rem 0.5rem;
+    height: 3.5rem;
+}
+
+.content-1 .icon {
+    font-size: 1.2rem;
+}
+.form2-content-1 .form2-icon-1
+{
+    font-size: 1.2rem;
+}
+.prev-2
+{
+    position:absolute;
+    top: 0%;
+    left: 0%;
+    padding:2rem 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+/* .para-1
+{
+    text-decoration: none;
+    color:black;
+
+}
+.para-2
+{
+    font-size: 1.5rem;
+    
+} */
+.box-item
+{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:black;
+}
+.content-1 input {
+    background-color: #e9e9e9;
+    border-radius: 2rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0rem 3rem;
+
+}
+ .content-1 input:focus
+{
+    outline:auto;
+    outline-offset: 0.5rem;
+    outline-color: #e9e9e9;
+    outline-width: 0.2rem;
+}
+.form2-content-1 input
+{
+    background-color: #e9e9e9;
+    border-radius: 2rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0rem 3rem;
+}
+.form2-content-1 input:focus
+{
+    outline:auto;
+    outline-offset: 0.5rem;
+    outline-color: #e9e9e9;
+    outline-width:0.2rem;
+}
+
+.content-1 .icon {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 0rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form2-content-1 .form2-icon-1
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 0rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    background-color: #57b846;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+.form2-btn
+{
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #57b846;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #111110;
+}
+.form2-btn:hover
+{
+    color:white;
+    background-color: #111110;
+}
+.active {
+    display: none;
+}
+.active1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right:0%;
+    bottom:0%;
+    width: 100%;
+    height: 100%;
+
+}
+.form2
+{
+    background-color: white;
+    width: 35rem;
+    padding: 5rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem 0rem;
+    /* background-color: red; */
+}
+.active2 {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2rem 0rem;
+
+
+}
+.active3
+{
+    display: flex !important;
+    position: absolute;
+    top:0%;
+    left: 0%;
+    padding:2rem 2rem;
+    /* width: 2%; */
+    /* height:2%; */
+}
+
+.active-1
+{
+    display: none;
+}
+.prev
+{
+    font-size: 2rem;
+}
+
+.box-section {
+    background-color: #f3f3f3;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 10rem 10rem;
+    /* background-color: red; */
+}
+
+.title-1 {
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem 0rem;
+}
+.title-3
+{
+    font-size: 2rem;
+}
+
+.title-1 .date {
+    color: #1111103d
+}
+
+.current-balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-balance .balance-value {
+    font-size: 3rem;
+}
+
+.transaction-content {
+    display: flex;
+    gap: 0rem 2rem;
+    width: 100%;
+    height: 100%;
+    gap: 0rem 5rem;
+}
+
+.transactions {
+    width: 50rem;
+    cursor: pointer;
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem 0rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.transactions-row {
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 2rem 2rem;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.transaction-type {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.transaction-date {
+    font-size: 1.2rem;
+}
+
+.transaction-value {
+    font-size: 2rem;
+}
+
+.transaction-deposit {
+    background-color: #57b846;
+    padding: 0.5rem 2rem;
+    border-radius: 1.5rem;
+
+}
+
+.transaction-withdrawal {
+    background-color: #ff414d;
+    padding: 0.5rem 2rem;
+    border-radius: 1.5rem;
+}
+
+.transaction-details {
+
+    padding: 0rem 0rem !important;
+}
+
+.deposit-details-1 {
+
+    font-size: 1.2rem;
+}
+.details-3
+{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.transaction-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0rem 5rem;
+}
+
+.deposit-details-1 {
+    display: flex;
+    align-items: center;
+    gap: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.deposit-details-2 {
+    color: #57b846;
+    font-size: 2rem;
+}
+
+.w-details-1 {
+    display: flex;
+    align-items: center;
+    gap: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.w-details-2 {
+    color: #ff414d;
+    font-size: 2rem;
+}
+
+.in-details-1 {
+    display: flex;
+    align-items: center;
+    gap: 0rem 1rem;
+    font-size: 1.5rem;
+}
+
+.in-details-2 {
+    color: #57b846;
+    font-size: 2rem;
+}
+
+.right-section {
+    display: flex;
+    gap: 1rem 0rem;
+    flex-direction: column;
+}
+
+.transfer-money {
+    display: flex;
+    gap: 1.5rem 0rem;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+.money-2 span
+{
+    font-size: 1.5rem;
+}
+.right-section-2
+{
+    display: flex;
+    align-items:center;
+    gap: 0rem 2rem;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.money-2
+{
+  display: flex;
+  flex-direction: column;
+  gap:1.5rem 0rem;    
+}
+.money-2-part-1
+{
+    display: flex;
+    gap:0rem 1rem;
+    /* justify-content: center; */
+    /* flex-direction: column; */
+    /* gap:0.5rem 0rem; */
+}
+.money-2-part-2
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:15rem;
+    height:5rem;
+    gap:0.5rem 0rem;
+}
+.money-2-part-2 input
+{
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+.transfer-money-1 {
+    display: flex;
+    gap: 0rem 1rem;
+}
+
+.transfer-money span {
+    font-size: 1.5rem;
+}
+
+.transfer-money-part1 {
+
+    width: 15rem;
+    height: 5rem;
+    display: flex;
+    gap: 0.5rem 0rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transfer-money-part1 input {
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.transfer-money-part2 {
+
+    width: 15rem;
+    height: 5rem;
+    display: flex;
+    gap: 0.5rem 0rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.transfer-money-part2 input {
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-section {
+    background-color: white;
+    height: 3rem;
+    cursor: pointer;
+    padding: 0rem 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+
+}
+.btn-section-2
+{
+    background-color: white;
+    cursor: pointer;
+    height:2.5rem;
+    padding: 0rem 1.5rem;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+
+.loan-section {
+    display: flex;
+    gap: 1.5rem 0rem;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    border-radius: 1rem;
+    background-color: #57b846;
+}
+
+.loan-section-1 {
+    width: 15rem;
+    height: 5rem;
+    display: flex;
+    gap: 0.5rem 0rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loan-section-part2 {
+    width: 15rem;
+    height: 5rem;
+    display: flex;
+    gap: 0.5rem 0rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loan-section-part2 input {
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+.loan-section span {
+    font-size: 1.5rem;
+}
+.prev
+{
+    display: none;
+    cursor:pointer;
+}
+.title-2
+{
+    font-size: 2rem;
+}
+.right-section-3
+{
+    display: flex;
+    align-items:center;
+    gap: 0rem 2rem;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+    /* background-image: linear-gradient(to top left, #39b385, #9be15d); */
+}
+.section-3-info
+{
+    display: flex;
+    flex-direction: column;
+    gap:1rem 0rem;
+}
+.section-3-info span
+{
+    font-size: 1.5rem;
+}
+.section-3-part-2
+{
+    display: flex;
+    gap:0rem 1rem;
+    /* flex-direction: column; */
+    /* background-color: #111110; */
+}
+.section-3-para-1
+{
+    display: flex;
+    flex-direction: column;
+    width:15rem;
+    height:5rem;
+    gap:0.5rem 0rem;
+}
+.section-3-para-1 input 
+{
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+.section-3-para-2
+{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem 0rem;
+}
+.section-3-para-2 input 
+{
+     border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+.btn-section-3
+{
+    padding:0.5rem 1.5rem;
+    cursor: pointer;
+    border:none;
+    outline:none;
+    border-radius: 0.5rem;
+}
