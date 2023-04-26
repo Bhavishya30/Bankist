@@ -104,6 +104,10 @@ html {
     padding: 0rem 3rem;
 
 }
+.active-1
+{
+    color:#57b846;
+}
  .content-1 input:focus
 {
     outline:auto;
@@ -136,6 +140,7 @@ html {
     height: 100%;
     display: flex;
     align-items: center;
+    transition: 0.1s all ease;
     justify-content: center;
 }
 .form2-content-1 .form2-icon-1
@@ -148,6 +153,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.1s all ease;
 }
 
 .btn {
@@ -160,6 +166,7 @@ html {
     transition: 0.5s all ease;
     cursor: pointer;
 }
+
 .form2-btn
 {
     width: 100%;
@@ -234,6 +241,10 @@ html {
 .active-1
 {
     display: none;
+}
+.active-2
+{
+    color:#57b846;
 }
 .prev
 {

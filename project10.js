@@ -346,6 +346,13 @@ form2_btn.addEventListener("click", function () {
                 form2_password.value = "";
             }
             else {
+                let retrieved_password=retrieved_obj.find(function(value3,i)
+                {
+                    
+                    return value3.pin===Number(acc_password);
+                })
+                if(retrieved_password==undefined)
+                {
                 let user = {
                     owner: acc_username,
                     pin: Number(acc_password),
@@ -358,6 +365,12 @@ form2_btn.addEventListener("click", function () {
                 form2_login.value = "";
                 form2_password.value = "";
             }
+            else
+            {
+                alert("Password Already Exists Please Enter Any Other Password");
+                form2_password.value="";
+            }
+        }
         }
 
     }
@@ -420,4 +433,32 @@ details_3.addEventListener("click",function()
 {
     createtransactions(acc_1.movements,!check)
     check=!check;
+})
+let box3=[...document.querySelectorAll(".box-3")];
+let icons=[...document.querySelectorAll(".icon")];
+box3.forEach(value=>{
+      value.addEventListener("click",function()
+      {
+          icons.forEach(value3=>
+            {
+                value3.classList.remove("active-1");
+            });
+            this.previousElementSibling.classList.add("active-1");
+      })
+})
+
+let box1=[...document.querySelectorAll(".box-1")];
+let icons2=[...document.querySelectorAll(".form2-icon-1")];
+console.log(icons2);
+
+box1.forEach(value=>{
+    value.addEventListener("click",function()
+    {
+      
+        icons2.forEach(value2=>{
+            value2.classList.remove("active-2");
+        })
+        this.previousElementSibling.classList.add("active-2");
+    })
+    
 })
