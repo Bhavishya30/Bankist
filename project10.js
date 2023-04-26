@@ -16,12 +16,12 @@ let btn2 = document.querySelector(".btn-2");
 let box_item = document.querySelector(".box-item");
 let form2 = document.querySelector(".form-section-2");
 let prev2 = document.querySelector(".prev-2");
-let money_2=document.querySelector(".money-2-info");
-let btn3=document.querySelector(".btn-3");
-let btn_4=document.querySelector(".btn-section-3")
-let para=document.querySelector(".section-3-para_1");
-let para2=document.querySelector(".section-3-para_2");
-let details_3=document.querySelector(".details-3");
+let money_2 = document.querySelector(".money-2-info");
+let btn3 = document.querySelector(".btn-3");
+let btn_4 = document.querySelector(".btn-section-3")
+let para = document.querySelector(".section-3-para_1");
+let para2 = document.querySelector(".section-3-para_2");
+let details_3 = document.querySelector(".details-3");
 button.addEventListener("click", xyz);
 prev.addEventListener("click", xyz2);
 let acc_1;
@@ -94,20 +94,17 @@ function xyz() {
 //     interestRate: 1.5,
 //     pin: 2222,
 // }
-let createtransactions = function (transaction,sort=false) {
+let createtransactions = function (transaction, sort = false) {
     transactions.innerHTML = "";
     let transaction2;
-    if(sort)
-    {
-        transaction2=transaction.slice().sort(function(a,b)
-        {
-            return a-b;
+    if (sort) {
+        transaction2 = transaction.slice().sort(function (a, b) {
+            return a - b;
         })
         console.log(transaction2);
     }
-    else
-    {
-        transaction2=transaction.slice();
+    else {
+        transaction2 = transaction.slice();
     }
     transaction2.forEach(function (value, i) {
         let type;
@@ -245,7 +242,7 @@ function xyz2() {
 }
 btn2.addEventListener("click", function () {
     let amount_to = transferamount_to.value;
-    let parsed_data3=JSON.parse(localStorage.getItem("users"))||[];
+    let parsed_data3 = JSON.parse(localStorage.getItem("users")) || [];
     let acc2 = JSON.parse(localStorage.getItem("users")).find(function (value, i) {
         return value.owner === amount_to;
     })
@@ -292,6 +289,33 @@ btn2.addEventListener("click", function () {
     }
 })
 
+let box3 = [...document.querySelectorAll(".box-3")];
+let icons = [...document.querySelectorAll(".icon")];
+box3.forEach(value => {
+    value.addEventListener("click", function () {
+        icons.forEach(value3 => {
+            value3.classList.remove("green");
+        });
+        this.previousElementSibling.classList.add("green");
+    })
+})
+
+let box1 = [...document.querySelectorAll(".box-1")];
+let icons2 = [...document.querySelectorAll(".form2-icon-1")];
+console.log(icons2);
+
+box1.forEach(value => {
+    value.addEventListener("click", function () {
+
+        icons2.forEach(value2 => {
+            value2.classList.remove("active-2");
+        })
+        this.previousElementSibling.classList.add("active-2");
+    })
+
+})
+
+
 function xyz3(acc) {
     createtransactions(acc.movements);
     transaction_details(acc);
@@ -300,12 +324,18 @@ function xyz3(acc) {
 
 box_item.addEventListener("click", function (e) {
     e.preventDefault();
+    icons.forEach(value => {
+        value.classList.remove("green");
+    })
     form.classList.add("active-1");
     form2.classList.add("active1");
 })
 prev2.addEventListener("click", function () {
     form.classList.remove("active-1");
     form2.classList.remove("active1");
+    icons2.forEach(value2 => {
+        value2.classList.remove("active-2");
+    })
 })
 
 let form2_login = document.querySelector(".form2-login");
@@ -346,119 +376,79 @@ form2_btn.addEventListener("click", function () {
                 form2_password.value = "";
             }
             else {
-                let retrieved_password=retrieved_obj.find(function(value3,i)
-                {
-                    
-                    return value3.pin===Number(acc_password);
+                let retrieved_password = retrieved_obj.find(function (value3, i) {
+
+                    return value3.pin === Number(acc_password);
                 })
-                if(retrieved_password==undefined)
-                {
-                let user = {
-                    owner: acc_username,
-                    pin: Number(acc_password),
-                    movements: [2000],
-                    interestRate: 1.2,
+                if (retrieved_password == undefined) {
+                    let user = {
+                        owner: acc_username,
+                        pin: Number(acc_password),
+                        movements: [2000],
+                        interestRate: 1.2,
+                    }
+                    retrieved_obj.push(user);
+                    localStorage.setItem("users", JSON.stringify(retrieved_obj));
+                    alert("User Created Successfully");
+                    form2_login.value = "";
+                    form2_password.value = "";
                 }
-                retrieved_obj.push(user);
-                localStorage.setItem("users", JSON.stringify(retrieved_obj));
-                alert("User Created Successfully");
-                form2_login.value = "";
-                form2_password.value = "";
+                else {
+                    alert("Password Already Exists Please Enter Any Other Password");
+                    form2_password.value = "";
+                }
             }
-            else
-            {
-                alert("Password Already Exists Please Enter Any Other Password");
-                form2_password.value="";
-            }
-        }
         }
 
     }
 
 
 })
-btn3.addEventListener("click",function()
-{
-    let parsed_data=JSON.parse(localStorage.getItem("users"))||[];
+btn3.addEventListener("click", function () {
+    let parsed_data = JSON.parse(localStorage.getItem("users")) || [];
     console.log(parsed_data);
     acc_1.movements.push(Math.floor(money_2.value));
-   xyz3(acc_1);
-//    console.log(users);
-  parsed_data.map(function(value,i)
-  {
-    if(value.owner==acc_1.owner)
-    {
-        value.movements.push(Math.floor(money_2.value));
+    xyz3(acc_1);
+    //    console.log(users);
+    parsed_data.map(function (value, i) {
+        if (value.owner == acc_1.owner) {
+            value.movements.push(Math.floor(money_2.value));
+        }
+    })
+    localStorage.setItem("users", JSON.stringify(parsed_data));
+    money_2.value = "";
+    //   console.log(parsed_data);
+
+
+})
+btn_4.addEventListener("click", function () {
+    let parsed_data = JSON.parse(localStorage.getItem("users")) || [];
+    let acc3 = parsed_data.find(function (value, i) {
+        return value.owner === para.value;
+    })
+    if (acc3) {
+        if (acc3.pin === Number(para2.value)) {
+            users = parsed_data.filter(function (value, i) {
+                return value.owner != para.value;
+            })
+            console.log(parsed_data);
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("The acc has been deleted successfully");
+            para.value = "";
+            para2.value = "";
+        }
     }
-  })
-  localStorage.setItem("users",JSON.stringify(parsed_data));
-  money_2.value="";
-//   console.log(parsed_data);
+    else {
+        alert(`No acc with a username ${para.value} exists Please check the username again`);
+        para.value = "";
+        para2.value = "";
+    }
 
 
 })
-btn_4.addEventListener("click",function()
-{
-    let parsed_data=JSON.parse(localStorage.getItem("users"))||[];
-    let acc3=parsed_data.find(function(value,i)
-    {
-        return value.owner===para.value;
-    })
-   if(acc3)
-   {
-          if(acc3.pin===Number(para2.value))
-          {
-              users=parsed_data.filter(function(value,i)
-              {
-               return value.owner!=para.value;
-              })
-              console.log(parsed_data);
-             localStorage.setItem("users",JSON.stringify(users));
-             alert("The acc has been deleted successfully");
-             para.value="";
-             para2.value="";
-          }
-   }
-   else
-   {
-    alert(`No acc with a username ${para.value} exists Please check the username again`);
-    para.value="";
-    para2.value="";
-   }
-    
-
-})
-let check=false;
-details_3.addEventListener("click",function()
-{
-    createtransactions(acc_1.movements,!check)
-    check=!check;
-})
-let box3=[...document.querySelectorAll(".box-3")];
-let icons=[...document.querySelectorAll(".icon")];
-box3.forEach(value=>{
-      value.addEventListener("click",function()
-      {
-          icons.forEach(value3=>
-            {
-                value3.classList.remove("active-1");
-            });
-            this.previousElementSibling.classList.add("active-1");
-      })
+let check = false;
+details_3.addEventListener("click", function () {
+    createtransactions(acc_1.movements, !check)
+    check = !check;
 })
 
-let box1=[...document.querySelectorAll(".box-1")];
-let icons2=[...document.querySelectorAll(".form2-icon-1")];
-console.log(icons2);
-
-box1.forEach(value=>{
-    value.addEventListener("click",function()
-    {
-      
-        icons2.forEach(value2=>{
-            value2.classList.remove("active-2");
-        })
-        this.previousElementSibling.classList.add("active-2");
-    })
-    
-})

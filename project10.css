@@ -104,10 +104,6 @@ html {
     padding: 0rem 3rem;
 
 }
-.active-1
-{
-    color:#57b846;
-}
  .content-1 input:focus
 {
     outline:auto;
@@ -243,6 +239,10 @@ html {
     display: none;
 }
 .active-2
+{
+    color:#57b846;
+}
+.green
 {
     color:#57b846;
 }
